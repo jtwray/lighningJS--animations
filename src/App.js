@@ -85,8 +85,8 @@ export default class App extends Lightning.Component {
           {
             p: 'text.text',
             v: {
-              0: "let's start learning",
-              0.5: "Let's start building!",
+              0: "Let's start Learning",
+              0.5: "Let's start Building!",
               0.99: "Let's start Lightning!",
             },
           },
