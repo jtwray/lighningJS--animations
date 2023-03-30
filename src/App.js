@@ -56,13 +56,31 @@ export default class App extends Lightning.Component {
   _init() {
     this.tag('Background')
       .animation({
-        duration: 15,
+        duration: 5,
         repeat: -1,
         actions: [
           {
-            t: '',
-            p: 'color',
-            v: { 0: { v: 0xfffbb03b }, 0.5: { v: 0xfff46730 }, 0.8: { v: 0xfffbb03b } },
+            t: '', //tag
+            p: 'color', //property
+            v: {
+              0: { v: 0xffff0000 },
+              0.33: { v: 0xff00ff00 },
+              0.66: { v: 0xff0000ff },
+              0.99: { v: 0xffff0000 },
+            },
+          },
+        ],
+      })
+      .start()
+    this.tag('Text')
+      .animation({
+        duration: 5,
+        repeat: -1,
+        actions: [
+          {
+            t: '', //tag
+            p: 'y', //property
+            v: { 0: { v: 720 }, 0.5: { v: 1000 }, 0.99: { v: 720 } },
           },
         ],
       })
