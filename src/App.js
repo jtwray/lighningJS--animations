@@ -72,26 +72,33 @@ export default class App extends Lightning.Component {
         ],
       })
       .start()
-    this.tag('Text')
-      .animation({
-        duration: 5,
-        repeat: -1,
-        actions: [
-          {
-            t: '', //tag
-            p: 'y', //property
-            v: { 0: { v: 720 }, 0.33: { v: 1000 }, 0.66: { v: 720 } },
+    this.animationText = this.tag('Text').animation({
+      duration: 5,
+      repeat: -1,
+      actions: [
+        {
+          t: '', //tag
+          p: 'y', //property
+          v: { 0: { v: 720, sm: 1 }, 0.33: { v: 1000, sm: 0.5 }, 0.66: { v: 720, sm: 1 } },
+        },
+        {
+          p: 'text.text',
+          v: {
+            0: "Let's start Learning!",
+            0.33: "Let's start Building!",
+            0.66: "Let's start Lightning!",
           },
-          {
-            p: 'text.text',
-            v: {
-              0: "Let's start Learning!",
-              0.33: "Let's start Building!",
-              0.66: "Let's start Lightning!",
-            },
-          },
-        ],
-      })
-      .start()
+        },
+      ],
+    })
+    // .start()
+  }
+
+  _handleEnter() {
+    if (this.animationText.isPlaying()) {
+      this.animationText.pause()
+    } else {
+      this.animationText.play()
+    }
   }
 }
