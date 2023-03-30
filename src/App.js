@@ -82,6 +82,14 @@ export default class App extends Lightning.Component {
             p: 'y', //property
             v: { 0: { v: 720 }, 0.5: { v: 1000 }, 0.99: { v: 720 } },
           },
+          {
+            p: 'text.text',
+            v: {
+              0: "let's start learning",
+              0.5: "Let's start building!",
+              0.99: "Let's start Lightning!",
+            },
+          },
         ],
       })
       .start()
