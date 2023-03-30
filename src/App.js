@@ -96,7 +96,10 @@ export default class App extends Lightning.Component {
 
   _handleEnter() {
     if (this.animationText.isPlaying()) {
-      this.animationText.pause()
+      // this.animationText.stop()
+      this.animationText.finish()
+      // this.animationText.stopNow()
+      // this.animationText.pause()
     } else {
       this.animationText.play()
     }
